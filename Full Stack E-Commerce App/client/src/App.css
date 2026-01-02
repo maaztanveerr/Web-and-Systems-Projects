@@ -1,0 +1,113 @@
+#root {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem 2.5rem;
+  text-align: center;
+}
+
+/* Hero on the home page */
+.landing-hero {
+  margin-top: 2rem;
+  background-color: #ffffff;        /* white on dark background */
+  border-radius: 20px;
+  padding: 2rem 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;           /* stack image, then text box */
+  align-items: center;
+  gap: 1.25rem;                     /* space between image and text box */
+}
+
+/* market at the top of the hero */
+.landing-hero-image {
+  width: 100%;
+  max-width: 760px;                
+  border-radius: 16px;
+  display: block;
+}
+
+/* text box sitting below the image */
+.landing-hero-inner {
+  background-color: #0f172a;        /* dark navy text box */
+  color: #f9fafb;
+  padding: 1.5rem 1.75rem;          /* a bit less padding so it is shorter */
+  border-radius: 14px;
+  max-width: 460px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
+
+
+  margin-top: -35px;
+}
+
+/* heading inside the hero text box */
+.landing-hero-inner h2 {
+  margin: 0 0 0.6rem 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* para under the heading */
+.landing-hero-inner p {
+  margin: 0 0 1.25rem 0;
+  font-size: 0.95rem;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* image inside each product card on /products */
+.product-card-image {
+  width: 100%;
+  max-width: 260px;      /* makes the "coming soon" square much smaller */
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  margin: 1rem auto 0;   /* center in the card */
+}
+
+/* image on the single product page (/products/:id) */
+.product-detail-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  margin: 1.25rem auto 0;
+}
