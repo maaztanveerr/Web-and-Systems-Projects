@@ -1,0 +1,117 @@
+/* give page a background color */
+body {
+    background-color: aliceblue; 
+    font-family: sans-serif; 
+}
+
+/* center the heading */
+h1 {
+    text-align: center;         
+    margin-bottom: 20px; 
+}
+
+/* score section */
+#scoreSection {
+    width: 90%;
+    /* make it almost full width but leave some space */
+    margin: auto;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* the > here means only direct children of #scoreSection so only divs inside it directly are styled not divs nested deeper */
+#scoreSection>div {
+    display: inline-block;
+    /* inline-block so they sit next to each other not stacked */
+    margin: 0 10px;
+}
+
+/* reset button styling */
+#resetBtn {
+    display: inline-block;
+    /* inline-block so it flows next to text */
+    margin-left: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+    /* cursor pointer makes hand appear on hover*/
+}
+
+/* BOARD LAYOUT 
+     using grid 
+     4 columns, gap between cards. */
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* means 4 equal columns */
+    gap: 12px;
+    /* space between cards  */
+    width: 90%;
+    margin: auto;
+}
+
+/* actual card now
+     follows flip-card pattern from the attached css tips
+     structure is .card then inside .card-inner then two faces
+  */
+.card {
+    perspective: 1000px;
+    /* perspective 1000px makes the 3d flip look real */
+    height: 120px;
+    /* fixed card height */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    /* smooth flip */
+    transform-style: preserve-3d;
+    /* keep front/back in 3D space */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* hide when flipped */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* this centers the emoji horizontally */
+    font-size: x-large;
+}
+
+/* back shows first   */
+.card-back {
+    background-color: #bbb;
+    color: black;
+}
+
+/* front side with symbol 
+    rotated 180deg so it shows only when parent flips */
+.card-front {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* flipped state means we rotate inner 180deg 
+    now front comes to front and back hides */
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* outlining green to show success */
+.card.matched .card-inner {
+    outline: 3px solid green;
+}
+
+/* focus-visible adds blue outline */
+.card:focus-visible {
+    outline: 2px solid dodgerblue;
+}
