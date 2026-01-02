@@ -113,6 +113,7 @@ This project assumes your `orders_mat927` table includes at least:
 
 Example response
 { "id": 15 }
+```
 
 ## How to Run Locally
 
@@ -136,6 +137,7 @@ Start the server:
 Go into the client folder and run:
 - npm install
 - npm run dev
+```
 
 Notes:
 
